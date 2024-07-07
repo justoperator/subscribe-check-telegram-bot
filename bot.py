@@ -12,7 +12,7 @@ bot = telebot.TeleBot(api_token)
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
     markup = types.InlineKeyboardMarkup()
-    btn_subscribe = types.InlineKeyboardButton(text='Subscribe✅', url=f'https://t.me/={channel}')
+    btn_subscribe = types.InlineKeyboardButton(text='Subscribe✅', url=f'https://t.me/{channel}')
     btn_check = types.InlineKeyboardButton(text='Check subscribe🔄', callback_data='check_subscribe')
     markup.add(btn_subscribe, btn_check)
     bot.send_message(message.chat.id, "Subscribe to the channel before get the file", reply_markup=markup) #message with buttons to user if they say '/start' command to bot and they not be subscribed to channel yet
